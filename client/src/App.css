@@ -1,0 +1,551 @@
+/* Global Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full height of viewport */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column; /* Flexbox layout for vertical alignment */
+}
+
+#root {
+  flex: 1; /* Make the root take up available space */
+  display: flex;
+  flex-direction: column; /* Content flows vertically */
+}
+
+footer {
+  background-color: rgba(141, 205, 237, 0.919);
+  color: black;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  position: relative; /* Ensure footer stays at the bottom */
+  z-index: 10; /* Ensures it’s above other elements */
+}
+
+.main-content {
+  flex: 1; /* Ensures the content grows to fill the space */
+  padding-bottom: 60px; /* Add padding to account for footer height */
+}
+
+/* Centering Content for Cart, Login, Admin */
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  text-align: center;
+}
+
+/* Page Content Styling */
+.page-content {
+  width: 90%; /* Adjust width to ensure it doesn't stretch too much */
+  max-width: 600px; /* Limit max-width for better readability */
+}
+
+/* Login Page Styling */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #f4f4f4; /* Optional light background */
+  padding: 1rem; /* Add some padding for small screens */
+  box-sizing: border-box; /* Prevent width overflow */
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 35px; /* Add some margin from the top of the page */
+
+}
+
+.login-page h2 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.login-page p {
+  font-size: 1.2em;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Signup Container */
+.signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 35px; /* Add some margin from the top of the page */
+
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Admin Styles */
+.admin-login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.admin-login-page form {
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-login-page input,
+.admin-login-page button {
+  margin-bottom: 1em;
+  padding: 0.75em;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.admin-login-page button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-login-page button:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(141, 205, 237, 0.919);
+  color: black;
+  padding: 1em;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%; /* Adjust the width for balanced distribution */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  text-align: center;
+  margin: 0 0.1em; /* Reduce horizontal space between items */
+}
+
+.nav-icon {
+  margin-bottom: 0px; /* Reduce space between the icon and text */
+}
+
+.nav-logo {
+  width: 20px; /* Decrease icon size for better proportions */
+  height: auto;
+}
+
+span {
+  display: block;
+  font-size: 15px; /* Keep font size moderate */
+  font-weight: 500;
+  margin-top: 2px; /* Reduce vertical spacing slightly */
+}
+
+.nav-link {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center-align the content */
+}
+
+nav h1 {
+  font-size: 25px; /* Slightly smaller title for balance */
+  margin: 0; /* Remove default margin */
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  display: flex; /* Enable Flexbox */
+  min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+  text-align: center; /* Center-align text */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* Shop Page */
+.shop {
+  padding: 2em;
+  text-align: center; /* Centers all child elements horizontally */
+}
+
+.shop h2 {
+  font-size: 2.5em;
+  margin: 0 auto; /* Ensures horizontal centering */
+  color: #333;
+  font-weight: bold;
+  text-align: center; /* Explicitly aligns the text */
+  margin-bottom: 1.5em; /* Adds proper spacing below the heading */
+}
+
+/* Categories Section */
+.categories {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.categories li a {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.categories li a:hover {
+  background-color: #0056b3;
+}
+
+/* Category Page */
+.category {
+  padding: 2em;
+  text-align: center;
+}
+
+.category h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  color: #333;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+  padding: 0 2em;
+}
+
+/* Product Card */
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.2em;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 1em;
+}
+
+.product-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
+  font-weight: bold;
+}
+
+.product-card p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.product-card .view-details {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-card .view-details:hover {
+  background-color: #008fb3;
+}
+
+.product-card button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #555;
+}
+
+/* Product Detail Page */
+.product-detail {
+  padding: 2em;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  margin: 2em auto;
+  max-width: 700px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail img {
+  max-width: 100%;
+  height: 300px; /* Slightly larger for better visibility */
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 1.5em;
+}
+
+.product-detail h2 {
+  font-size: 2.2em;
+  margin-bottom: 1em;
+  color: #333;
+  font-weight: bold;
+}
+
+.product-detail p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 1.8em;
+}
+
+.product-detail h4 {
+  font-size: 1.2em;
+  color: green;
+  margin-bottom: 1.8em;
+}
+
+.product-detail button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-detail button:hover {
+  background-color: #0056b3;
+}
+
+/* Center the cart content on the page */
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top to prevent overlap with footer */
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0 10px; /* Add padding to prevent content from touching the edges */
+}
+
+/* Styling for the cart container */
+.cart-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  overflow-y: auto; /* Allow scroll within the container if content exceeds height */
+  max-height: 80vh; /* Set max height of the container */
+  margin-top: 20px; /* Add space from the top */
+}
+
+/* Cart header */
+.cart-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+/* Styling for the error message */
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+/* Styling for the cart items list */
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 70vh; /* Set maximum height for list */
+  overflow-y: auto; /* Add vertical scroll if there are too many items */
+}
+
+/* Each cart item */
+.cart-item {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  gap: 15px; /* Add spacing between elements */
+  margin-bottom: 10px; /* Add margin between items */
+}
+
+/* Image styling for cart item */
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Cart item details */
+.cart-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 70px); /* Account for image width and spacing */
+  font-size: 1rem;
+  gap: 15px; /* Ensure equal spacing between details */
+}
+
+/* Product name styling */
+.cart-item-details span:first-child {
+  flex: 2;
+  text-align: left;
+}
+
+/* Price styling */
+.cart-item-details span:nth-child(2) {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Quantity styling */
+.cart-item-details span:nth-child(3) {
+  flex: 1;
+  text-align: center;
+}
+
+/* Remove button styling */
+.remove-btn {
+  flex: 0.5; /* Smaller width for button */
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px; /* Adjust padding */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Empty cart message */
+.empty-cart-message {
+  color: #777777;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories li {
+    margin: 1em 0;
+  }
+}

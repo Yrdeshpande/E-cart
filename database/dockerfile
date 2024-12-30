@@ -1,0 +1,3 @@
+FROM mongo:latest
+# Optional: Add initialization scripts or data seeds here
+COPY ./init-scripts /docker-entrypoint-initdb.d/
