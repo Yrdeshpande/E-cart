@@ -14,7 +14,7 @@ const CategoryPage = () => {
       try {
         setLoading(true);
         // Fetch products for the given category from the backend
-        const response = await axios.get(`http://localhost:5000/api/products/${category}`);
+        const response = await axios.get(`http://backend:5000/api/products/${category}`);
         setProducts(response.data); // Set the fetched data
       } catch (err) {
         console.error('Error fetching products:', err);

@@ -11,8 +11,15 @@ const port = 5000;
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://host.docker.internal:27017/ecart")
-
+//mongoose.connect("mongodb://host.docker.internal:27017/ecart")
+mongoose.connect("mongodb://mongodb-svc:27017/ecart", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log("Connected to MongoDB.");
+}).catch(err => {
+  console.error("Failed to connect to MongoDB:", err);
+});
 
 // Secret key for JWT generation
 const JWT_SECRET = 'your-secret-key'; // Replace with a more secure secret
@@ -133,7 +140,8 @@ const productsData = {
 };
 
 // Serve static files from the public folder
-app.use('/images', express.static(path.join(__dirname, 'http://localhost:3000/images/')));
+app.use('/images', express.static(path.join(__dirname, 'http://frontend:3000/images/')));
+//app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // API endpoint to fetch product details by category and productId
 

@@ -12,7 +12,7 @@ function Signup() {
 
   const submit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5000/register', { username, email, password })
+    axios.post('http://backend:5000/register', { username, email, password })
     .then((result) => {console.log(result);
       navigate('/login'); // Navigate after successful registration
     })

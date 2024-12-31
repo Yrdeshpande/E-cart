@@ -17,7 +17,7 @@ const Cart = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/cart/${username}`);
+        const response = await axios.get(`http://backend:5000/cart/${username}`);
         setCartItems(response.data);
       } catch (err) {
         console.error('Error fetching cart items:', err);
@@ -42,7 +42,7 @@ const removeProduct = async (productId) => {
   }
 
   try {
-    await axios.delete(`http://localhost:5000/cart/${username}/${productId}`);
+    await axios.delete(`http://backend:5000/cart/${username}/${productId}`);
     // Remove the item from the cart state
     setCartItems(cartItems.filter((item) => item.productId !== productId));
   } catch (err) {

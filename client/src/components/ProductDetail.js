@@ -13,7 +13,7 @@ const ProductsDetail = ({ userToken }) => {
     // Fetch product details from the backend
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${category}/${productId}`);
+        const response = await fetch(`http://backend:5000/api/products/${category}/${productId}`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -47,7 +47,7 @@ const ProductsDetail = ({ userToken }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/cart/${username}`, {
+      const response = await fetch(`http://backend:5000/cart/${username}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
