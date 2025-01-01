@@ -17,7 +17,7 @@ const Cart = () => {
       }
 
       try {
-        const response = await axios.get(`http://backend:5000/cart/${username}`);
+        const response = await axios.get(`http://app.yogiraj.tech/backend/cart/${username}`);
         setCartItems(response.data);
       } catch (err) {
         console.error('Error fetching cart items:', err);
