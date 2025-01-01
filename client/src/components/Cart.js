@@ -42,7 +42,7 @@ const removeProduct = async (productId) => {
   }
 
   try {
-    await axios.delete(`http://backend:5000/cart/${username}/${productId}`);
+    await axios.delete(`http://app.yogiraj.tech/backend/cart/${username}/${productId}`);
     // Remove the item from the cart state
     setCartItems(cartItems.filter((item) => item.productId !== productId));
   } catch (err) {

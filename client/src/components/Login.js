@@ -34,7 +34,7 @@ function Login({ setUser }) {
     setError(null);
 
     try {
-      const result = await axios.post('http://backend:5000/login',{ username, email, password },
+      const result = await axios.post('http://app.yogiraj.tech/backend/login',{ username, email, password },
         { headers: { 'Content-Type': 'application/json' } }
       );
 

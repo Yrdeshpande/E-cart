@@ -13,7 +13,7 @@ const ProductsDetail = ({ userToken }) => {
     // Fetch product details from the backend
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://backend:5000/api/products/${category}/${productId}`);
+        const response = await fetch(`http://app.yogiraj.tech/backend/api/products/${category}/${productId}`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -47,7 +47,7 @@ const ProductsDetail = ({ userToken }) => {
     }
   
     try {
-      const response = await fetch(`http://backend:5000/cart/${username}`, {
+      const response = await fetch(`http://app.yogiraj.tech/backend/cart/${username}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const ProductsDetail = ({ userToken }) => {
 
   return (
     <div className="product-detail">
-      <img src={product.image} alt={product.name} className="product-image" />
+      <img src={`/images/${product.image}`} alt={product.name} className="product-image" />
       <h2>{product.name}</h2>
       <p className="price">{formattedPrice}</p>
       <p>{product.description}</p>

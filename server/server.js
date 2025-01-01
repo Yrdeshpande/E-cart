@@ -139,8 +139,6 @@ const productsData = {
   ],
 };
 
-// Serve static files from the public folder
-app.use('/images', express.static(path.join(__dirname, 'http://frontend:3000/images/')));
 //app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // API endpoint to fetch product details by category and productId
@@ -259,5 +257,5 @@ app.delete('/cart/:username/:productId', async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on:${port}`);
+  console.log(`Server is listening on port:${port}`);
 });
