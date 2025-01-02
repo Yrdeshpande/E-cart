@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: REACT_APP_BACKEND_URL
-          value: "http://app.yogiraj.tech/api/tasks"
+          value: "http://app.yogiraj.tech/backend"
         ports:
         - containerPort: 3000
 ---
