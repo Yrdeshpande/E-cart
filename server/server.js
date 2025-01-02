@@ -25,7 +25,7 @@ mongoose.connect("mongodb://mongodb-svc:27017/ecart", {
 const JWT_SECRET = 'your-secret-key'; // Replace with a more secure secret
 
 // Login route
-app.post('/login', (req, res) => {
+app.post('/backend/login', (req, res) => {
   const { username, password } = req.body;
   EcartModel.findOne({ username: username })
     .then(user => {
@@ -50,7 +50,7 @@ app.post('/login', (req, res) => {
 });
 
 // Register route (no changes needed)
-app.post('/register', (req, res) => {
+app.post('/backend/register', (req, res) => {
   EcartModel.create(req.body)
     .then(ecarts => res.json(ecarts))
     .catch(err => res.json(err));
@@ -143,7 +143,7 @@ const productsData = {
 
 // API endpoint to fetch product details by category and productId
 
-app.get('/api/products/:category', (req, res) => {
+app.get('/backend/api/products/:category', (req, res) => {
   const { category } = req.params;
 
   const categoryProducts = productsData[category];
@@ -155,7 +155,7 @@ app.get('/api/products/:category', (req, res) => {
 });
 
 // API endpoint to fetch product details by category and productId
-app.get('/api/products/:category/:productId', (req, res) => {
+app.get('/backend/api/products/:category/:productId', (req, res) => {
   const { category, productId } = req.params;
 
   const categoryProducts = productsData[category];
@@ -172,7 +172,7 @@ app.get('/api/products/:category/:productId', (req, res) => {
 });
 
 //Cart route
-app.post('/cart/:username', async (req, res) => {
+app.post('/backend/cart/:username', async (req, res) => {
   const { username } = req.params;
   const { productId, name, price, image } = req.body;
 
@@ -197,7 +197,7 @@ app.post('/cart/:username', async (req, res) => {
   }
 });
 
-app.get('/cart/:username', async (req, res) => {
+app.get('/backend/cart/:username', async (req, res) => {
   const { username } = req.params;
 
   try {
@@ -213,7 +213,7 @@ app.get('/cart/:username', async (req, res) => {
   }
 });
 
-app.put('/cart/:username/:productId', async (req, res) => {
+app.put('/backend/cart/:username/:productId', async (req, res) => {
   const { username, productId } = req.params;
   const { quantity } = req.body;
 
@@ -237,7 +237,7 @@ app.put('/cart/:username/:productId', async (req, res) => {
   }
 });
 
-app.delete('/cart/:username/:productId', async (req, res) => {
+app.delete('/backend/cart/:username/:productId', async (req, res) => {
   const { username, productId } = req.params;
 
   try {
