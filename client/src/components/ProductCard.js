@@ -4,7 +4,7 @@ import './ProductCard.css'; // Import styling (you can create a separate CSS fil
 const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
-      <img src={`/images/${product.image}`} alt={product.name} className="product-image" />
+      <img src={`${product.image}`} alt={product.name} className="product-image" />
       <h3 className="product-name">{product.name}</h3>
       <p className="product-price">{new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(product.price)}</p>
       <button 
