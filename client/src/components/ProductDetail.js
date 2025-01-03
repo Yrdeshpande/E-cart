@@ -95,7 +95,7 @@ const ProductsDetail = ({ userToken }) => {
 
   return (
     <div className="product-detail">
-      <img src={`/images/${product.image}`} alt={product.name} className="product-image" />
+      <img src={`${product.image}`} alt={product.name} className="product-image" />
       <h2>{product.name}</h2>
       <p className="price">{formattedPrice}</p>
       <p>{product.description}</p>
